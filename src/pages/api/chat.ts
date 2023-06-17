@@ -9,6 +9,7 @@ export default async function handler(
     const response = await axios.post(
       "https://api.openai.com/v1/chat/completions",
       {
+
         ...req.body,
         model: "gpt-3.5-turbo", // Especifica el modelo que deseas utilizar
       },
