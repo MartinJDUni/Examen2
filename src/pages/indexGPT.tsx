@@ -8,7 +8,7 @@ export default function Home() {
     <div>
       <Header />
       <main>
-        <Cta />
+        <Body />
       </main>
       <Footer />
     </div>
