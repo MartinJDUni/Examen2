@@ -55,7 +55,7 @@ export default function Home() {
 
         const requestBody2 = {
             messages: [
-                { role: "system", content: "You: " + "dame una lista de palabras clave" + response },
+                { role: "system", content: "You: " +  response + "del texto dame una lista de palabras clave" },
             ],
         };
 
@@ -84,37 +84,39 @@ export default function Home() {
     const List2 = responseList.split("\n").filter((item) => item !== ".");
     return (
         <section>
-            <div className="container px-5 py-24 mx-auto">
-                <div className="flex flex-wrap w-full mb-20">
-                    <div className="lg:w-1/2 w-full mb-6 lg:mb-0">
-                        <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">
-                            Generador de palabras clave SEO
-                        </h1>
-                        <div className="h-1 w-20 bg-indigo-500 rounded"></div>
-                    </div>
-                </div>
-                <div className="flex flex-wrap -m-4">
-                    <div className="xl:w-1/4 md:w-1/2 p-4">
-                        <div className="bg-gray-100 p-6 rounded-lg">
-                            <form className="items-center" onSubmit={handleSubmit}>
-                                <div>
-                                    <input className="Inputs" type="text" value={inputValue} onChange={handleInputChange} />
-                                </div>
-                                <div>
-                                    <input className="Inputs" type="text" value={inputValue2} onChange={handleInputChange2} />
-                                </div>
-                                <div>
-                                    <input className="Inputs" type="text" value={inputValue3} onChange={handleInputChange3} />
-                                </div>
-                                <div>
-                                    <input className="Inputs" type="text" value={inputValue4} onChange={handleInputChange4} />
-                                </div>
-                                <button type="submit">Enviar</button>
-                            </form>
-                        </div>
-                        <div >
-                            <div className="bg-gray-100 p-6 rounded-lg">
+            <div>
+                <div className="container px-5 py-24 mx-auto">
+                    <div className="flex flex-wrap w-full mb-20">
+                        <div className="lg:w-1/2 w-full mb-6 lg:mb-0">
+                            <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">
+                                Generador de palabras clave SEO
+                            </h1>
+                            <p>
 
+                            </p>
+                            <div className="h-1 w-20 bg-indigo-500 rounded"></div>
+                        </div>
+                    </div>
+                    <div className="grid grid-cols-2 gap-4">
+                        <div className="">
+                            <div className="bg-gray-100 p-6 rounded-lg">
+                                <form className="items-center" onSubmit={handleSubmit}>
+                                    <div>
+                                        <input className="Inputs" type="text" value={inputValue} onChange={handleInputChange} />
+                                    </div>
+                                    <div>
+                                        <input className="Inputs" type="text" value={inputValue2} onChange={handleInputChange2} />
+                                    </div>
+                                    <div>
+                                        <input className="Inputs" type="text" value={inputValue3} onChange={handleInputChange3} />
+                                    </div>
+                                    <div>
+                                        <input className="Inputs" type="text" value={inputValue4} onChange={handleInputChange4} />
+                                    </div>
+                                    <button type="submit">Enviar</button>
+                                </form>
+                            </div>
+                            <div className="bg-gray-100 p-6 rounded-lg">
                                 {error && <p>{error}</p>}
                                 <ul>
                                     {List.map((item, index) => (
@@ -122,21 +124,22 @@ export default function Home() {
                                     ))}
                                 </ul>
                             </div>
-                        </div>
-                        <div >
-                            <form onSubmit={ListhandleSubmit}>
-                                <button type="submit">Lista de palabras clave</button>
-                            </form>
-                            <ul>
-                                {List2.map((item, index) => (
-                                    <li key={index}>{item}</li>
-                                ))}
-                            </ul>
+                            <div className="bg-gray-100 p-6 rounded-lg">
+                                <form onSubmit={ListhandleSubmit}>
+                                    <button type="submit">Lista de palabras clave</button>
+                                </form>
+                            </div>
+                            <div className="bg-gray-100 p-6 rounded-lg">
+                                <ul>
+                                    {List2.map((item, index) => (
+                                        <li key={index}>{item}</li>
+                                    ))}
+                                </ul>
+                            </div>
                         </div>
                     </div>
-
                 </div>
-                <div className="xl:w-1/4 md:w-1/2 p-4">
+                <div className="">
                     <div className="bg-gray-100 p-6 rounded-lg">
                         {responseList && (
                             <button onClick={handleDownload}>Descargar respuesta</button>
@@ -148,3 +151,4 @@ export default function Home() {
 
     );
 }
+
