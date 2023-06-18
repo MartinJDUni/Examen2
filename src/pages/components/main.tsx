@@ -55,7 +55,7 @@ export default function Home() {
 
         const requestBody2 = {
             messages: [
-                { role: "system", content: "You: " +  response + "del texto dame una lista de palabras clave" },
+                { role: "system", content: "You: " + response + "del texto dame una lista de palabras clave" },
             ],
         };
 
@@ -100,23 +100,28 @@ export default function Home() {
                     <div className="flex items-center justify-center">
                         <div className="">
                             <div className="bg-gray-100 p-6 rounded-lg">
-                                <form className="items-center" onSubmit={handleSubmit}>
-                                    <div>
-                                        <input className="Inputs" type="text" value={inputValue} onChange={handleInputChange} />
+                                <form onSubmit={handleSubmit}>
+                                    <div className="flex items-center justify-center"><h1> Parametros</h1></div>
+                                    <div className="flex items-center justify-center px-5 py-24">
+                                        <div >
+                                            <input className="Inputs m-4" type="text" value={inputValue} onChange={handleInputChange} placeholder="Titular" />
+                                        </div>
+                                        <div>
+                                            <input className="Inputs m-4" type="text" value={inputValue2} onChange={handleInputChange2} placeholder="Evitar" />
+                                        </div>
+                                        <div>
+                                            <input className="Inputs m-4" type="text" value={inputValue3} onChange={handleInputChange3} placeholder="Motivo" />
+                                        </div>
+                                        <div>
+                                            <input className="Inputs m-4" type="text" value={inputValue4} onChange={handleInputChange4} placeholder="Cantidad" />
+                                        </div>
                                     </div>
-                                    <div>
-                                        <input className="Inputs" type="text" value={inputValue2} onChange={handleInputChange2} />
-                                    </div>
-                                    <div>
-                                        <input className="Inputs" type="text" value={inputValue3} onChange={handleInputChange3} />
-                                    </div>
-                                    <div>
-                                        <input className="Inputs" type="text" value={inputValue4} onChange={handleInputChange4} />
-                                    </div>
+                                    <div className="flex items-center justify-center">
                                     <button type="submit">Enviar</button>
+                                    </div>
                                 </form>
                             </div>
-                            <div className="bg-gray-100 p-6 rounded-lg">
+                            <div className="bg-gray-100 p-6 rounded-lg flex items-center justify-center">
                                 {error && <p>{error}</p>}
                                 <ul>
                                     {List.map((item, index) => (
@@ -124,7 +129,7 @@ export default function Home() {
                                     ))}
                                 </ul>
                             </div>
-                            <div className="bg-gray-100 p-6 rounded-lg">
+                            <div className="bg-gray-100 p-6 rounded-lg flex items-center justify-center">
                                 <form onSubmit={ListhandleSubmit}>
                                     <button type="submit">Lista de palabras clave</button>
                                 </form>
@@ -139,7 +144,7 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-                <div className="">
+                <div className="flex items-center justify-center">
                     <div className="bg-gray-100 p-6 rounded-lg">
                         {responseList && (
                             <button onClick={handleDownload}>Descargar respuesta</button>
