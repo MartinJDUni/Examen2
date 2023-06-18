@@ -83,8 +83,8 @@ export default function Home() {
     const List = response.split("\n").filter((item) => item !== "."); // Separar la respuesta en elementos de la lista
     const List2 = responseList.split("\n").filter((item) => item !== ".");
     return (
-        <section>
-            <div>
+        <section className="min-h-screen w-screen">
+            <div className="m-4 ">
                 <div className="container px-5 py-24 mx-auto">
                     <div className="flex flex-wrap w-full mb-20">
                         <div className="lg:w-1/2 w-full mb-6 lg:mb-0">
@@ -92,7 +92,9 @@ export default function Home() {
                                 Generador de palabras clave SEO
                             </h1>
                             <p>
-
+                                En este programas ingresas las parte que se indican,
+                                luego el retona una serie de oraciones, de las cuales saldran las palabras claves,
+                                por ultimo podras descargar esa palabla en un achivo de tipo .txt
                             </p>
                             <div className="h-1 w-20 bg-indigo-500 rounded"></div>
                         </div>
@@ -117,7 +119,7 @@ export default function Home() {
                                         </div>
                                     </div>
                                     <div className="flex items-center justify-center">
-                                    <button type="submit">Enviar</button>
+                                        <button type="submit">Pedir oraciones</button>
                                     </div>
                                 </form>
                             </div>
