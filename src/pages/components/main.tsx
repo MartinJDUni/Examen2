@@ -103,7 +103,7 @@ export default function Home() {
                         <div className="">
                             <div className="bg-gray-100 p-6 rounded-lg">
                                 <form onSubmit={handleSubmit}>
-                                    <div className="flex items-center justify-center"><h1> Parametros</h1></div>
+                                    <div className="flex items-center justify-center"><h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900"> Parametros</h1></div>
                                     <div className="flex items-center justify-center px-5 py-24">
                                         <div >
                                             <input className="Inputs m-4" type="text" value={inputValue} onChange={handleInputChange} placeholder="Titular" />
@@ -119,7 +119,7 @@ export default function Home() {
                                         </div>
                                     </div>
                                     <div className="flex items-center justify-center">
-                                        <button type="submit">Pedir oraciones</button>
+                                        <button className="flex-shrink-0 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg mt-10 sm:mt-0"type="submit">Pedir oraciones</button>
                                     </div>
                                 </form>
                             </div>
@@ -133,10 +133,10 @@ export default function Home() {
                             </div>
                             <div className="bg-gray-100 p-6 rounded-lg flex items-center justify-center">
                                 <form onSubmit={ListhandleSubmit}>
-                                    <button type="submit">Lista de palabras clave</button>
+                                    <button className="flex-shrink-0 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg mt-10 sm:mt-0"type="submit">Lista de palabras clave</button>
                                 </form>
                             </div>
-                            <div className="bg-gray-100 p-6 rounded-lg">
+                            <div className="bg-gray-100 p-6 rounded-lg flex items-center justify-center">
                                 <ul>
                                     {List2.map((item, index) => (
                                         <li key={index}>{item}</li>
@@ -149,7 +149,7 @@ export default function Home() {
                 <div className="flex items-center justify-center">
                     <div className="bg-gray-100 p-6 rounded-lg">
                         {responseList && (
-                            <button onClick={handleDownload}>Descargar respuesta</button>
+                            <button className="flex-shrink-0 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg mt-10 sm:mt-0" onClick={handleDownload}>Descargar respuesta</button>
                         )}
                     </div>
                 </div>

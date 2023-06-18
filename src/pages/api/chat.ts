@@ -11,7 +11,7 @@ export default async function handler(
       {
 
         ...req.body,
-        model: "gpt-3.5-turbo", // Especifica el modelo que deseas utilizar
+        model: "gpt-3.5-turbo",
       },
       {
         headers: {
