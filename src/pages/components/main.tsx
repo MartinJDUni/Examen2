@@ -97,7 +97,7 @@ export default function Home() {
                             <div className="h-1 w-20 bg-indigo-500 rounded"></div>
                         </div>
                     </div>
-                    <div className="grid grid-cols-2 gap-4">
+                    <div className="flex items-center justify-center">
                         <div className="">
                             <div className="bg-gray-100 p-6 rounded-lg">
                                 <form className="items-center" onSubmit={handleSubmit}>
